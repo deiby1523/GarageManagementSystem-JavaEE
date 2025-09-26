@@ -4,12 +4,14 @@ import com.uts.taller2.garage.model.Vehiculo;
 import java.sql.*;
 import java.util.*;
 
+/**
+ DAO para la gestión de vehículos en la base de datos.
+ Todas las operaciones CRUD y de consulta deben manejar excepciones
+ y documentar los errores detectados. Además, hacer las operaciones crud
+ de la tabla vehículos.
+ */
 public class VehiculoDAO {
 
-    /*DAO para la gestión de vehículos en la base de datos. 
-    Todas las operaciones CRUD y de consulta deben manejar excepciones 
-    y documentar los errores detectados. */
-    //VehiculoDAO realiza operaciones CRUD sobre la tabla vehiculos.  
     private final Connection con;
 
     /**
@@ -86,7 +88,6 @@ public class VehiculoDAO {
      *
      * @param placa placa a buscar
      * @return true si existe, false si no
-     * @throws java.sql.SQLException
      */
     public boolean existePlaca(String placa) throws SQLException {
         String sql = "SELECT COUNT(*) FROM vehicles WHERE license_plate=?";
@@ -145,7 +146,7 @@ public class VehiculoDAO {
     }
 
     /**
-     * Borra un vehículo por id.
+     * Borra un vehículo por ID.
      */
     public void eliminar(int id) throws SQLException {
         String sql = "DELETE FROM vehicles WHERE id=?";

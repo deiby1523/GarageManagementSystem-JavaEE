@@ -3,8 +3,7 @@ package com.uts.taller2.garage.model;
 
 public class Vehiculo {
 
-    /*Entidad vehiculo representa un vehiculo del garage.*/
-    
+    /**Entidad vehículo representa un vehículo del garage.*/
     private int id; 
     private String placa; 
     private String marca;
@@ -12,11 +11,11 @@ public class Vehiculo {
     private String color;
     private String propietario;
 
-    /* Constructor vacio*/
+    /** Constructor vacío */
     public Vehiculo() {
     }
 
-    /* Constructor completo*/
+    /** Constructor completo*/
     public Vehiculo(int id, String placa, String marca, String modelo, String color, String propietario) {
         this.id = id;
         this.placa = placa;
