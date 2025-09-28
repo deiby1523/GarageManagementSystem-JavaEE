@@ -1,14 +1,16 @@
 package com.uts.taller2.garage.persistence;
 
 import com.uts.taller2.garage.model.Vehiculo;
+
 import java.sql.*;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
- DAO para la gestión de vehículos en la base de datos.
- Todas las operaciones CRUD y de consulta deben manejar excepciones
- y documentar los errores detectados. Además, hacer las operaciones crud
- de la tabla vehículos.
+ * DAO para la gestión de vehículos en la base de datos.
+ * Todas las operaciones CRUD y de consulta deben manejar excepciones
+ * y documentar los errores detectados. Además, hacer las operaciones crud
+ * de la tabla vehículos.
  */
 public class VehiculoDAO {
 
@@ -98,8 +100,7 @@ public class VehiculoDAO {
                 return rs.getInt(1) > 0;
             }
         } catch (SQLException ex) {
-            System.err.println("Error al verificar placa: "
-                    + ex.getMessage());
+            System.err.println("Error al verificar placa: " + ex.getMessage());
             throw ex;
         }
         return false;
@@ -119,8 +120,7 @@ public class VehiculoDAO {
             ps.setString(5, v.getPropietario());
             ps.executeUpdate();
         } catch (SQLException ex) {
-            System.err.println("Error al agregar vehículo: "
-                    + ex.getMessage());
+            System.err.println("Error al agregar vehículo: " + ex.getMessage());
             throw ex;
         }
     }
@@ -139,8 +139,7 @@ public class VehiculoDAO {
             ps.setInt(6, v.getId());
             ps.executeUpdate();
         } catch (SQLException ex) {
-            System.err.println("Error al actualizar vehículo: "
-                    + ex.getMessage());
+            System.err.println("Error al actualizar vehículo: " + ex.getMessage());
             throw ex;
         }
     }
@@ -154,8 +153,7 @@ public class VehiculoDAO {
             ps.setInt(1, id);
             ps.executeUpdate();
         } catch (SQLException ex) {
-            System.err.println("Error al eliminar vehículo: "
-                    + ex.getMessage());
+            System.err.println("Error al eliminar vehículo: " + ex.getMessage());
             throw ex;
         }
     }
