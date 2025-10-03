@@ -127,6 +127,17 @@ public class VehiculoFacade {
         }
     }
 
+    /**
+     * Válida la placa del vehículo con las siguientes reglas:
+     * - No nulo ni vacío
+     * - Mínimo 3 caracteres
+     * - No duplicada en BD
+     * - No contiene patrones típicos de SQL Injection
+     *
+     * @param placa recibe la placa a validar
+     * @param dao   DAO para consultar si la placa ya existe
+     * @throws SQLException si alguna validación falla
+     */
     private void validatePlaca(String placa, VehiculoDAO dao) throws SQLException {
         // Validar: no nulo ni vacío
         if (placa == null || placa.trim().isEmpty()) {
@@ -147,6 +158,15 @@ public class VehiculoFacade {
         }
     }
 
+    /**
+     * Válida la placa del vehículo con las siguientes reglas:
+     * - No nulo ni vacío
+     * - No contiene patrones típicos de SQL Injection
+     * - Debe estar dentro de la lista permitida (Rojo, Azul, Verde, Gris)
+     *
+     * @param colorVehiculo recibe color a validar
+     * @throws SQLException si alguna validación falla
+     */
     private void validateColor(String colorVehiculo) throws SQLException {
         // Validar: no nulo ni vacío
         if (colorVehiculo == null || colorVehiculo.trim().isEmpty()) {
@@ -171,6 +191,15 @@ public class VehiculoFacade {
         }
     }
 
+    /**
+     * Válida la placa del vehículo con las siguientes reglas:
+     * - No nulo ni vacío
+     * - Mínimo 5 caracteres
+     * - No contiene patrones típicos de SQL Injection
+     *
+     * @param propietario recibe propietario a validar
+     * @throws SQLException si alguna validación falla
+     */
     private void validateOwner(String propietario) throws SQLException {
         // Validar: no nulo ni vacío
         if (propietario == null || propietario.trim().isEmpty()) {
@@ -186,6 +215,18 @@ public class VehiculoFacade {
         }
     }
 
+    /**
+     * Válida la placa del vehículo con las siguientes reglas:
+     * - No nulo ni vacío
+     * - Mínimo 3 caracteres
+     * - No mayor al año actual
+     * - Máximo 20 años de antigüedad
+     * - Debe ser un número válido (ejemplo: 2014)
+     * - No contiene patrones típicos de SQL Injection
+     *
+     * @param modelo recibe el modelo a validar
+     * @throws SQLException si alguna validación falla
+     */
     private void validateModel(String modelo) throws SQLException {
         // Validar: no nulo ni vacío
         if (modelo == null || modelo.trim().isEmpty()) {
@@ -219,6 +260,15 @@ public class VehiculoFacade {
         }
     }
 
+    /**
+     * Válida la placa del vehículo con las siguientes reglas:
+     * - No nulo ni vacío
+     * - Mínimo 3 caracteres
+     * - No contiene patrones típicos de SQL Injection
+     *
+     * @param marca recibe marca a validar
+     * @throws SQLException si alguna validación falla
+     */
     private void validateBrand(String marca) throws SQLException {
         // Validar: no nulo ni vacío
         if (marca == null || marca.trim().isEmpty()) {
