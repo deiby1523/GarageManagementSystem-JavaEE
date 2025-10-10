@@ -58,7 +58,7 @@ public class Vehiculo {
      * @param placa establece la placa
      */
     public void setPlaca(String placa) {
-        this.placa = placa;
+        this.placa = (placa != null) ? placa.trim() : null;
     }
 
     /**
@@ -72,7 +72,7 @@ public class Vehiculo {
      * @param marca establece la marca
      */
     public void setMarca(String marca) {
-        this.marca = marca;
+        this.marca = (marca != null) ? marca.trim() : null;
     }
 
     /**
@@ -86,7 +86,7 @@ public class Vehiculo {
      * @param modelo establece el modelo
      */
     public void setModelo(String modelo) {
-        this.modelo = modelo;
+        this.modelo = (modelo != null) ? modelo.trim() : null;
     }
 
     /**
@@ -100,7 +100,7 @@ public class Vehiculo {
      * @param color establece el color
      */
     public void setColor(String color) {
-        this.color = color;
+        this.color = (color != null) ? color.trim() : null;
     }
 
     /**
@@ -114,7 +114,7 @@ public class Vehiculo {
      * @param propietario establece el propietario
      */
     public void setPropietario(String propietario) {
-        this.propietario = propietario;
+        this.propietario = (propietario != null) ? propietario.trim() : null;
     }
 
 
